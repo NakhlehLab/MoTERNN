@@ -34,6 +34,8 @@ optional arguments:
   -nsample NSAMPLE, --nsample NSAMPLE
                         number of datapoints generated for each mode of evolution
   -dir DIR, --dir DIR   destination directory to save the simulated data
+  -seed SEED, --seed SEED
+                        random seed
 ```
 ### Contact
 If you have any questions, please contact edrisi@rice.edu
