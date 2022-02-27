@@ -15,5 +15,11 @@ We used [ETE Toolkit](http://etetoolkit.org) for handling tree objects. It can b
 conda install -c etetoolkit ete3
 ```
 ## Reproducibility
+Download this package, unzip it, and navigate to the main directory named MoTERNN. 
+To make sure `generator.py` works and see the arguments, run:
+```
+python generator.py --help
+```
+
 ## Contact
 If you have any questions, please contact edrisi@rice.edu
