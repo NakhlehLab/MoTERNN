@@ -41,5 +41,6 @@ To generate the same simulated data we used in the paper, run `generator.py` wit
 ```
 python generator.py
 ```
+This will create a directory named `trees_dir` containing 8000 .nw and .csv files for the four modes of evoltion (2000 datapoints for each mode).
 ### Contact
 If you have any questions, please contact edrisi@rice.edu
