@@ -26,6 +26,7 @@ if __name__=="__main__":
 	parser.add_argument('-nloci','--nloci', help='number of loci in the genotype profiles', default=3375, type=int)
 	parser.add_argument('-nsample','--nsample', help='number of datapoints generated for each mode of evolution', default=2000, type=int)
 	parser.add_argument('-dir','--dir', help='destination directory to save the simulated data', default="./trees_dir/")
+	parser.add_argument('-seed','--seed', help='random seed', default=0, type=int)
 	args = parser.parse_args()
 	print(args)
 	# minimum number of single-cells
@@ -38,6 +39,9 @@ if __name__=="__main__":
 	target_dir = args.dir
 	# specify the number of trees that will be generated for each class
 	num_trees = args.nsample
+	# set the random seeds of numpy and random
+	np.random.seed(args.seed)
+	random.seed(args.seed)
 	counter = 0
 	print(f"simulating {num_trees} trees ...")
 	try:
