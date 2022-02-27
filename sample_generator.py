@@ -1,5 +1,6 @@
 import ete3
 from ete3 import Tree
+import argparse
 import numpy as np 
 np.random.seed(0)
 import random
@@ -19,16 +20,23 @@ import mutation_assigner
 from mutation_assigner import assign
 
 if __name__=="__main__":
+	parser = argparse.ArgumentParser(description='This script generates simulated trees for training MoTERNN')
+	parser.add_argument('-lb','--lb', help='minimum number of cells for each phylogeny', required=False, default=20, type=int)
+	parser.add_argument('-ub','--ub', help='maximum number of cells for each phylogeny', required=False, default=100, type=int)
+	parser.add_argument('-nloci','--nloci', help='number of loci in the genotype profiles', required=False, default=3375, type=int)
+	parser.add_argument('-nsample','--nsample', help='number of datapoints generated for each mode of evolution', required=False, default=2000, type=int)
+	parser.add_argument('-dir','--dir', help='destination directory to save the simulated data', required=False, default="./trees_dir/")
+	args = vars(parser.parse_args())
 	# minimum number of single-cells
-	c_lb = 20
+	c_lb = args.lb
 	# maximum number of single-cells
-	c_ub = 100
+	c_ub = args.ub
 	# the number of loci
-	n_loci = 3375
+	n_loci = args.nloci
 	# specify the name of the directory 
-	target_dir = "./trees_example_dataset/"
+	target_dir = args.dir
 	# specify the number of trees that will be generated for each class
-	num_trees = 2000
+	num_trees = args.nsample
 	counter = 0
 	print(f"simulating {num_trees} trees ...")
 	try:
