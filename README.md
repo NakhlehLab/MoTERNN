@@ -1,5 +1,5 @@
-# MoTERNN
-Identifying mode of tumor evolution using recursive neural networks
+# MoTERNN: Classifying mode of tumor evolution using recursive neural networks
+
 ## Installing the required packages
 ## Reproducibility
 ## Contact
