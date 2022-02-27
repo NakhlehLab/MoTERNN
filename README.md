@@ -4,8 +4,10 @@ Tumor evolutionary models have different implications in cancer patients' clinic
 This repository contains the PyTorch implementation of MoTERNN and the scripts used for generating simulated data. The implementation of Recursive Neural Network in this project was adopted from https://github.com/mae6/pyTorchTree. To reporduce the results presented in the paper, please follow the instructions below.
 ## Installing the required packages
 Install Python. To better manage Python packages we used Conda. The latest vwesion of Conda can be installed by following instructions in the website https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+
 Install PyTorch according to the OS and CUDA version. You can find the Conda command for PyTorch and Cuda Toolkit installation from PyTorch's official website https://pytorch.org/get-started/locally/
-We used ETE Toolkit for handling tree objects (http://etetoolkit.org). It can be installed using the following command for Conda:
+
+We used [ETE Toolkit](http://etetoolkit.org) for handling tree objects. It can be installed using the following command for Conda:
 ```
 conda install -c etetoolkit ete3
 ```
