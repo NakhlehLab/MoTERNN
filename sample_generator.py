@@ -28,7 +28,7 @@ if __name__=="__main__":
 	# specify the name of the directory 
 	target_dir = "./trees_example_dataset/"
 	# specify the number of trees that will be generated for each class
-	num_trees = 1000
+	num_trees = 2000
 	counter = 0
 	print(f"simulating {num_trees} trees ...")
 	try:
