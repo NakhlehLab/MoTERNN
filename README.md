@@ -37,5 +37,9 @@ optional arguments:
   -seed SEED, --seed SEED
                         random seed
 ```
+To generate the same simulated data we used in the paper, run `generator.py` with the default parameters which is simply done by the following command:
+```
+python generator.py
+```
 ### Contact
 If you have any questions, please contact edrisi@rice.edu
