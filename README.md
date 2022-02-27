@@ -1,2 +1,2 @@
-# TERNN
-Identifying model of tumor evolution via recursive neural networks
+# MoTERNN
+Identifying mode of tumor evolution using recursive neural networks
