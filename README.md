@@ -21,6 +21,19 @@ To make sure `generator.py` works and see the arguments, run:
 ```
 python generator.py --help
 ```
+which shows the following message:
+```
+This script generates simulated trees for training MoTERNN
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -lb LB, --lb LB       minimum number of cells for each phylogeny
+  -ub UB, --ub UB       maximum number of cells for each phylogeny
+  -nloci NLOCI, --nloci NLOCI
+                        number of loci in the genotype profiles
+  -nsample NSAMPLE, --nsample NSAMPLE
+                        number of datapoints generated for each mode of evolution
+  -dir DIR, --dir DIR   destination directory to save the simulated data
+```
 ### Contact
 If you have any questions, please contact edrisi@rice.edu
