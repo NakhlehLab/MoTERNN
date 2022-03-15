@@ -16,31 +16,31 @@ We used [ETE Toolkit](http://etetoolkit.org) for handling tree objects. It can b
 conda install -c etetoolkit ete3
 ```
 ## Reproducibility
-Download this package, unzip it, and navigate to the main directory named MoTERNN. 
-To make sure `generator.py` works and see the arguments, run:
-```
-python generator.py --help
-```
-which shows the following message:
-```
-This script generates simulated trees for training MoTERNN
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -lb LB, --lb LB       minimum number of cells for each phylogeny
-  -ub UB, --ub UB       maximum number of cells for each phylogeny
-  -nloci NLOCI, --nloci NLOCI
+  1. ### Simulation of the training data
+     Download this package, unzip it, and navigate to the main directory named MoTERNN. To make sure `generator.py` works and see the arguments, run:
+     ```
+     python generator.py --help
+     ```
+     which shows the following message:
+     ```
+     This script generates simulated trees for training MoTERNN
+     
+     optional arguments:
+     -h, --help            show this help message and exit
+     -lb LB, --lb LB       minimum number of cells for each phylogeny
+     -ub UB, --ub UB       maximum number of cells for each phylogeny
+     -nloci NLOCI, --nloci NLOCI
                         number of loci in the genotype profiles
-  -nsample NSAMPLE, --nsample NSAMPLE
+     -nsample NSAMPLE, --nsample NSAMPLE
                         number of datapoints generated for each mode of evolution
-  -dir DIR, --dir DIR   destination directory to save the simulated data
-  -seed SEED, --seed SEED
+     -dir DIR, --dir DIR   destination directory to save the simulated data
+     -seed SEED, --seed SEED
                         random seed
-```
-To generate the same simulated data we used in the paper, run `generator.py` with the default parameters which is simply done by the following command:
-```
-python generator.py
-```
-This will create a directory named `trees_dir` containing 8000 .nw and .csv files for the four modes of evoltion (2000 datapoints for each mode).
+     ```
+     To generate the same simulated data we used in the paper, run `generator.py` with the default parameters which is simply done by the following command:
+     ```
+     python generator.py
+     ```
+     This will run the generator with the default parameters (that we used for simulation study in the paper) and will create a directory named `trees_dir` containing 8000 .nw and .csv files for the four modes of evoltion (2000 datapoints for each mode).
 ### Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
