@@ -4,7 +4,8 @@ Tumor evolutionary models have different implications in cancer patients' clinic
 ## Description of the directories
 This repository contains the PyTorch implementation of MoTERNN and the scripts used for generating simulated data. Also, we have provided the trained model and the real data that we applied our method on in the study. Specifically we have:
 - `src`: contains all the scripts for training the RNN model and simulating the training data.
-- `data`: contains the real dataset including the phylogenetic tree (in Newick format) and the csv file of the genotypes at the leaves.
+- `data`: contains the real dataset including the phylogenetic tree (in Newick format) and the csv file of the genotypes at the leaves. 
+
 The implementation of Recursive Neural Network in this project was adopted from https://github.com/mae6/pyTorchTree. To reporduce the results presented in the paper, please follow the instructions below.
 ## How to install required packages
 ### Python installation
