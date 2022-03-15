@@ -45,5 +45,5 @@ conda install -c etetoolkit ete3
      python generator.py
      ```
      This will run the generator with the default parameters (that we used for simulation study in the paper) and will create a directory named `trees_dir` containing 8000 .nw and .csv files for the four modes of evoltion (2000 datapoints for each mode).
-### Contact
+## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
