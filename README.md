@@ -84,7 +84,6 @@ conda install -c etetoolkit ete3
       final accuracy of the model on the training set: 1.0
       final accuracy of the model on the test set: 1.0
       final accuracy of the model on the validation set: 1.0
-      real tree root accuracy at the end of training: 1.0
       prediction on real tree: Punctuated mode
       training was done in 684.0261344909668 seconds
       the trained model was saved at /home/mae6/evolution_modes/repo/moternn.pt
