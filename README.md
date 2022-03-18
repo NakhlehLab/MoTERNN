@@ -74,5 +74,9 @@ conda install -c etetoolkit ete3
                               number of loci in the genotype profiles (it must match the same arguemnt used in the
                               generator)
       ```
+      Now, run the code on the generated data as in the following example:
+      ```
+      python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -nsample 4000 -seed 0 -nloci 3375
+      ```
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
