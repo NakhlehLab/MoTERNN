@@ -88,7 +88,7 @@ conda install -c etetoolkit ete3
       training was done in 684.0261344909668 seconds
       the trained model was saved at /home/mae6/evolution_modes/repo/moternn.pt
       ```
-      which shows the accuracy of training, test, and validation sets in addition to the prediction on the real data. The trained model is provided in this repository at `data` directory named `moternn.pt`
+      which shows the accuracy of training, test, and validation sets in addition to the prediction on the real data. The trained model of this example is provided in this repository at `data` directory named `moternn.pt`
    3. ### Evaluating the trained model
       To evaluate the trained model and apply it on your data (e.g. the phylogeny from the TNBC data), navigate to `src` directory, then run `eval.py` using the following command:
       ```
