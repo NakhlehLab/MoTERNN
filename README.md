@@ -95,6 +95,6 @@ conda install -c etetoolkit ete3
       ```
       python eval.py -model ./moternn.pt -newick ./phylovar.nw -seq ./phylovar_seq.csv -nloci 3375 -dim 256 -seed 0
       ```
-      Here, the argument `-model ./moternn.pt` points to the path to the trained model. The rest of the arguments are defined as in 
+      Here, the argument `-model ./moternn.pt` points to the path to the trained model. The rest of the arguments are defined as in [Running MoTERNN](https://github.com/NakhlehLab/MoTERNN/blob/main/README.md#running-moternn)
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
