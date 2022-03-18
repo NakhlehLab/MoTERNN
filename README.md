@@ -78,17 +78,23 @@ conda install -c etetoolkit ete3
       ```
       python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -seed 0 -nloci 3375
       ```
-      The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `./phylovar_seq.csv`, respectively; the random seed is set to 0 (`-seed 0`), and the number of loci in the real and generated data is 3375 (`-nloci 3375`). 
+      The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the encoder network, maps the data into a shared space of size 256 (`-dim 256`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `./phylovar_seq.csv`, respectively; the random seed is set to 0 (`-seed 0`), and the number of loci in the real and generated data is 3375 (`-nloci 3375`). 
       At the end of training and testing, the output of the code run with the above settings will be as follows:
       ```
       final accuracy of the model on the training set: 1.0
       final accuracy of the model on the test set: 1.0
       final accuracy of the model on the validation set: 1.0
       real tree root accuracy at the end of training: 1.0
-      prediction on real tree: PE
+      prediction on real tree: Punctuated mode
       training was done in 684.0261344909668 seconds
       the trained model was saved at /home/mae6/evolution_modes/repo/moternn.pt
       ```
-      The trained model is provided in this repository at `data` directory named `moternn.pt`
+      which shows the accuracy of training, test, and validation sets in addition to the real data. The trained model is provided in this repository at `data` directory named `moternn.pt`
+   3. ### Using the trained model
+      To evaluate the trained model and apply it on your data (e.g. the phylogeny from the TNBC data), navigate to `src` directory, then run `eval.py` using the following command:
+      ```
+      python eval.py -model ./moternn.pt -newick ./phylovar.nw -seq ./phylovar_seq.csv -nloci 3375 -dim 256 -seed 0
+      ```
+      Here, the argument `-model ./moternn.pt` points to the path to the trained model. The rest of the arguments are defined as in 
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
