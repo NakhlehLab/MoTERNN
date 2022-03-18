@@ -21,7 +21,7 @@ conda install -c etetoolkit ete3
 ```
 ## Reproducibility
   1. ### Simulation of the training data
-     Download this package, unzip it, and navigate to the main directory named MoTERNN. To make sure `generator.py` works and see the arguments, run:
+     Download this package, unzip it, and navigate to the main directory named `src`. To make sure `generator.py` works and see the arguments, run:
      ```
      python generator.py --help
      ```
@@ -47,5 +47,32 @@ conda install -c etetoolkit ete3
      ```
      This will create a directory named `trees_dir` containing 16000 pairs of .nw and .csv files for each of the four modes of evolution (4000 datapoints for each mode, `-nsample 4000`), on 3375 loci (`-nloci 3375`) with the number of cells varying between 20 (`-lb 20`) and 100 (`-ub 100`), with seed 0 (`-seed 0`).
    2. ### Running MoTERNN
+      To run MoTERNN, use the code named `RNN.py` in `src` directory. First, to make sure the code works, run:
+      ```
+      python RNN.py --help
+      ```
+      which will show the following message:
+      ```
+      main script of MoTERNN
+
+      optional arguments:
+        -h, --help            show this help message and exit
+        -dir DIR, --dir DIR   path to the directory of the simulated data
+        -test TEST, --test TEST
+                              fraction of data (in percent) to be selected as test data
+        -val VAL, --val VAL   number of datapoints in validation set
+        -newick NEWICK, --newick NEWICK
+                              path to the real data phylogeny in newick format
+        -seq SEQ, --seq SEQ   path to the csv file containing the genotypes of the real data
+        -dim DIM, --dim DIM   embedding dimension for the encoder network
+        -nsample NSAMPLE, --nsample NSAMPLE
+                              number of datapoints generated for each mode of evolution (it must match the same
+                              argument used in the generator)
+        -seed SEED, --seed SEED
+                              random seed
+        -nloci NLOCI, --nloci NLOCI
+                              number of loci in the genotype profiles (it must match the same arguemnt used in the
+                              generator)
+      ```
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
