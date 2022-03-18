@@ -9,7 +9,7 @@ This repository contains the PyTorch implementation of MoTERNN and the scripts u
 The implementation of Recursive Neural Network in this project was adopted from https://github.com/mae6/pyTorchTree. To reporduce the results presented in the paper, please follow the instructions below in [Reproducibility](https://github.com/NakhlehLab/MoTERNN#reproducibility).
 ## How to install required packages
 ### Python installation
-To better manage Python packages we used Conda. The latest vwesion of Conda can be installed by following instructions in the website https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
+To better manage Python packages we used Conda. The latest version of Conda can be installed by following instructions in the website https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
 
 ### PyTorch installation
 Install PyTorch according to the OS and CUDA version. You can find the Conda command for PyTorch and Cuda Toolkit installation from PyTorch's official website https://pytorch.org/get-started/locally/
@@ -79,7 +79,7 @@ conda install -c etetoolkit ete3
       python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -seed 0 -nloci 3375
       ```
       The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the encoder network, maps the data into a shared space of size 256 (`-dim 256`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `./phylovar_seq.csv`, respectively; the random seed is set to 0 (`-seed 0`), and the number of loci in the real and generated data is 3375 (`-nloci 3375`). 
-      At the end of training and testing, the output of the code run with the above settings will be as follows:
+      At the end of training, the output of the code run with the above settings will be as follows:
       ```
       final accuracy of the model on the training set: 1.0
       final accuracy of the model on the test set: 1.0
