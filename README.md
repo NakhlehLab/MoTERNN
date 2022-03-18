@@ -76,7 +76,8 @@ conda install -c etetoolkit ete3
       ```
       Now, run the code on the generated data as in the following example:
       ```
-      python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -nsample 4000 -seed 0 -nloci 3375
+      python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -seed 0 -nloci 3375
       ```
+      The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `phylovar_seq.csv`, respectively. 
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
