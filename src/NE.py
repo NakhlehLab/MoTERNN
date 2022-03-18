@@ -70,6 +70,18 @@ def ne(N=20, n_loci=3375):
 	for node in t.get_descendants():
 		node.dist = np.random.poisson(5,1)[0]
 		n_mutations += node.dist
+	# # assign branch lengths to all branches
+	# n_edges = len(t.get_descendants())
+	# n_loci = n_loci
+	# n_loci = random.randint(int(0.5*n_loci), n_loci)
+	# m_ = np.random.multinomial(n_loci, [1/(n_edges)]*(n_edges), size=1)[0]
+	# n_mutations = 0
+	# counter = 0
+	# for node in t.get_descendants():
+	# 	node.dist = m_[counter]
+	# 	# node.dist = np.random.poisson(5,1)[0]
+	# 	n_mutations += node.dist
+	# 	counter += 1
 
 	return t, n_mutations
 
@@ -78,6 +90,7 @@ if __name__=="__main__":
 	# tree.write(format=3, outfile="neutral_example.nw")
 	print(tree)
 	print(n_muts)
+	print(len(tree))
 
 
 

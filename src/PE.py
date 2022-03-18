@@ -76,7 +76,8 @@ def pe(N=10, n_loci=3375):
 	# choose the number of dominant clones
 	K = random.sample([2,3], 1)[0]
 	# choose the number of cells for each clone
-	c_ = np.random.multinomial(n-1, [1/(K)]*(K), size=1)[0]
+	# each clone must have at least two cells, so we sample the remaining 
+	c_ = np.random.multinomial(n-1-2*K, [1/(K)]*(K), size=1)[0]
 	# # create the backbone tree for PE model 
 	t = Tree(name="root")
 	normal = t.add_child()
@@ -86,7 +87,7 @@ def pe(N=10, n_loci=3375):
 
 	ne(N=K, node=tumor)
 	for i,leaf in enumerate(tumor.get_leaves()):
-		ne(N=c_[i], node=leaf)
+		ne(N=c_[i]+2, node=leaf)
 
 	# create alphabetical names for the leaves and internal nodes
 	k = 0
@@ -109,11 +110,36 @@ def pe(N=10, n_loci=3375):
 	for node in tumor.get_descendants():
 		node.dist = np.random.poisson(5,1)[0]
 		n_mutations += node.dist
+	# # assign branch lengths to all branches
+	# n_loci = n_loci
+	# n_loci = random.randint(int(0.5*n_loci), n_loci)
+	# n_mutations = 0
+	# # the normal cell has zero distance to the root
+	# normal.dist = 0
+	# n_mutations += normal.dist
+	# n_edges = 1+len(tumor.get_descendants())
+	# weights = [1/3] + [(2/(3*(n_edges-1)))]*(n_edges-1)
+	# m_ = np.random.multinomial(n_loci, weights, size=1)[0]
+	# # # sample the number of mutations on the long trunk of the tree from
+	# # # a Poisson distribution with lambda = 1000
+	# # tumor.dist = np.random.poisson(100,1)[0]
+	# counter = 0
+	# tumor.dist = m_[counter]
+	# counter += 1
+	# # tumor.dist = random.randint(100, 1000)
+	# n_mutations += tumor.dist
+	# # # sample the number of mutations for clonal branches from 
+	# # # a Poisson distribution with lamda = 5
+	# for node in tumor.get_descendants():
+	# 	node.dist = m_[counter]
+	# 	# node.dist = np.random.poisson(5,1)[0]
+	# 	n_mutations += node.dist
+	# 	counter += 1
 
 	return t, n_mutations
 
 if __name__=="__main__":
-	tree, n_muts = pe(N=200, n_loci=3375)
+	tree, n_muts = pe(N=20, n_loci=3375)
 	# tree.write(format=3, outfile="punctuated_example.nw")
 	print(tree)
 	print(n_muts)
