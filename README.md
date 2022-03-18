@@ -41,10 +41,10 @@ conda install -c etetoolkit ete3
      -seed SEED, --seed SEED
                         random seed
      ```
-     To generate the same simulated data we used in the paper, run `generator.py` with the default parameters which is simply done by the following command:
+     To generate simulated data, run `generator.py`, run the following command:
      ```
-     python generator.py
+     python generator.py -dir ./trees_dir/ -nsample 4000 -lb 20 -ub 100 -seed 0 -nloci 3375
      ```
-     This will run the generator with the default parameters (that we used for simulation study in the paper) and will create a directory named `trees_dir` containing 8000 .nw and .csv files for the four modes of evoltion (2000 datapoints for each mode).
+     This will create a directory named `trees_dir` containing 16000 pairs of .nw and .csv files for each of the four modes of evolution (4000 datapoints for each mode, `nsample 4000`), on 3375 loci (`-nloci 3375`) with the number of cells varying between 20 (`-lb 20`) and 100 (`-ub 100`).
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
