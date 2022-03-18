@@ -45,7 +45,7 @@ conda install -c etetoolkit ete3
      ```
      python generator.py -dir ./trees_dir/ -nsample 4000 -lb 20 -ub 100 -seed 0 -nloci 3375
      ```
-     This will create a directory named `trees_dir` containing 16000 pairs of .nw and .csv files for each of the four modes of evolution (4000 datapoints for each mode, `-nsample 4000`), on 3375 loci (`-nloci 3375`) with the number of cells varying between 20 (`-lb 20`) and 100 (`-ub 100`), with seed 0 (`-seed 0`).
+     This will create a directory named `trees_dir` containing 16000 pairs of .nw and .csv files for each of the four modes of evolution (4000 datapoints for each mode, `-nsample 4000`), on 3375 loci (`-nloci 3375`) with the number of cells varying between 20 (`-lb 20`) and 100 (`-ub 100`), with random seed 0 (`-seed 0`).
    2. ### Running MoTERNN
       To run MoTERNN, use the code named `RNN.py` in `src` directory. First, to make sure the code works, run:
       ```
@@ -78,6 +78,17 @@ conda install -c etetoolkit ete3
       ```
       python RNN.py -nsample 4000 -dim 256 -dir ./trees_dir/ -test 0.25 -val 100 -newick ./phylovar.nw -seq ./phylovar_seq.csv -seed 0 -nloci 3375
       ```
-      The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `phylovar_seq.csv`, respectively. 
+      The above command runs the code assuming there are 4000 datapoints for each of the four classes (`-nsample 4000`), and they are stored in `./trees_dir/` directory (`-dir ./trees_dir/`); the test set contains 25% of the entire dataset, selected randomly (`-test 0.25`). The validation set contains 100 datapoints chosen randomly (`-val 100`); the topology of the real biological phylogeny in the form of newick string and the genotype sequences are stored in `./phylovar.nw` and `./phylovar_seq.csv`, respectively; the random seed is set to 0 (`-seed 0`), and the number of loci in the real and generated data is 3375 (`-nloci 3375`). 
+      At the end of training and testing, the output of the code run with the above settings will be as follows:
+      ```
+      final accuracy of the model on the training set: 1.0
+      final accuracy of the model on the test set: 1.0
+      final accuracy of the model on the validation set: 1.0
+      real tree root accuracy at the end of training: 1.0
+      prediction on real tree: PE
+      training was done in 684.0261344909668 seconds
+      the trained model was saved at /home/mae6/evolution_modes/repo/moternn.pt
+      ```
+      The trained model is provided in this repository at `data` directory named `moternn.pt`
 ## Contact
 If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
