@@ -4,7 +4,9 @@ Tumor evolutionary models have different implications in cancer patients' clinic
 ## Table of Contents
 
 [1. Description of the directories](#description-of-the-directories)  
-[2. How to install required packages](#how-to-install-required-packages)
+[2. How to install required packages](#how-to-install-required-packages)  
+[3. Reproducibility](#reproducibility)
+[4. Contact](#contact)
 
 ## Description of the directories
 This repository contains the PyTorch implementation of MoTERNN and the scripts used for generating simulated data. Also, we have provided the trained model and the real data that we applied our method on in the study. Specifically we have:
