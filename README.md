@@ -5,7 +5,7 @@ Tumor evolutionary models have different implications in cancer patients' clinic
 
 [1. Description of the directories](#description-of-the-directories)  
 [2. How to install required packages](#how-to-install-required-packages)  
-[3. Reproducibility](#reproducibility)
+[3. Reproducibility](#reproducibility)  
 [4. Contact](#contact)
 
 ## Description of the directories
